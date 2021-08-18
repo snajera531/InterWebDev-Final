@@ -1,3 +1,21 @@
 extends layout
 
 block content
+    h3=title
+    form(method='POST' action='/submitted')
+        p Username:
+            input(type='text' name='username')
+        p Password:
+            input(type='text' name='password')
+        p Email:
+            input(type='text' name='email')
+        p Age:
+            input(type='text' name='age')
+        p Question 1 Answer:
+            input(type='text' name='questionOne')
+        p Question 2 Answer:
+            input(type='text' name='quesitonTwo')
+        p Question 3 Answer:
+            input(type='text' name='quesitonThree')
+        p
+            input(type='submit' value='Submit')
