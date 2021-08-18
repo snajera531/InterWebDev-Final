@@ -2,4 +2,12 @@ doctype
 html 
     head 
         title=title
+        link(rel='stylesheet' href='/style.css')
+        nav 
+            ul 
+                each item in config.menu 
+                    a(href=item[1] target=item[2])
+                        div(class='menu_item')
+                            li=item[0]
     body
+        block content 
