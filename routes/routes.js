@@ -14,3 +14,15 @@ mongoose.set('useFindAndModify', true);
 let mdb = mongoose.connection;
 mdb.on('error', console.error.bind(console, 'connection error'));
 mdb.once('open', callback => {});
+
+exports.login = (req, res) => {
+    res.render('login', {
+        title: 'Log In'
+    });
+};
+
+exports.landing = (req, res) => {
+    res.render('landing', {
+        title: 'Welcome!'
+    });
+};
