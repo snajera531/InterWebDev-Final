@@ -3,6 +3,7 @@ const pug = require('pug');
 const routes = require('./routes/routes');
 const path = require('path');
 const cookieParser = require('cookie-parser');
+const bcrypt = require('bcryptjs');
 
 const app = express();
 
@@ -10,6 +11,8 @@ const app = express();
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+let salt = bcrypt.genSaltSync(10);
 
 let urlencodedParser = express.urlencoded({
     extended: false
@@ -32,7 +35,6 @@ app.get('/', (req, res) => {
         res.cookie('beenToSiteBefore', 'yes', {maxAge: 99999999999999999999999999});  
         res.send('this is your first time here')
     }
-   
 });
 
 app.get('/', routes.index);

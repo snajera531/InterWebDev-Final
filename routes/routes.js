@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 
+
 mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb+srv://admin:<AbC1234!>@cluster0.mo9pt.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
