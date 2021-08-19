@@ -26,3 +26,10 @@ exports.landing = (req, res) => {
         title: 'Welcome!'
     });
 };
+
+exports.logout = (req, res) => {
+    res.render('logout', {
+        title: 'Thank you for visiting!'
+    });
+    res.redirect('/login');
+};
