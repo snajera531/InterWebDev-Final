@@ -4,7 +4,7 @@ block content
 html
     head
     body
-        form(method='post' action='/')
+        form(method='post' action='/landing.pug')
             p Username (user):
                 br
                 input(type='text' name='username')
@@ -13,3 +13,13 @@ html
                 input(type='text' name='password')
             p
                 input(type='submit' value ='Log in')
+        form(method='post' action='/landing.pug')
+            p Username (user):
+                br
+                input(type='text' name='username')
+            p Password (pass):
+                br
+                input(type='text' name='password')
+            p Confirm Password ()
+            p 
+                input(type='submit' value='Submit')        
