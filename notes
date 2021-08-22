@@ -5,7 +5,7 @@ css
 chandler
 landing Page(questions)
 routes
-
+index.js (bcrypt)
 
 rachael
 
@@ -20,5 +20,4 @@ mongo
 
 Pages
 login
-landing Page(questions)
 logout Page

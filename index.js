@@ -13,6 +13,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 let salt = bcrypt.genSaltSync(10);
 
+const makeHash = the_str => {
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(the_str, salt, (err, my_hash) => {
+            console.log(my_hash);
+            hashComplete(my_hash);
+        });
+    });
+};
+
+const hashComplete = the_hash => {
+    bcrypt.compare('', the_hash, (err, res) => {
+        console.log(res);
+    });
+    bcrypt.compare('', the_hash, (err, res) => {
+        console.log(res);
+    });
+};
+
 let urlencodedParser = express.urlencoded({
     extended: false
 });
