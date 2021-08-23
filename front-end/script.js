@@ -30,18 +30,18 @@ const validate = () => {
         no_errors = false;
         errors.innerHTML = error_msg;
     }
-
-    const submitForm = () => {
-        validate();
-        if(error_msg != ''){
-            errors.innerHTML = error_msg;
-        }
-        
-        console.error(error_msg);
-        return no_errors;
-    }
-
-    username.addEventListener('input', validate);
-    password.addEventListener('input', validate);
-    pwverify.addEventListener('input', validate);
 }
+
+const submitForm = () => {
+    validate();
+    if(error_msg != ''){
+        errors.innerHTML = error_msg;
+    }
+    
+    console.error(error_msg);
+    return no_errors;
+}
+
+username.addEventListener('input', validate);
+password.addEventListener('input', validate);
+pwverify.addEventListener('input', validate);
