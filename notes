@@ -8,16 +8,11 @@ routes
 index.js (bcrypt)
 
 rachael
-
+layout
+logout
+login
 
 
 Need
-pug
-express
-express session
-cookies
-mongo
 
 Pages
-login
-logout Page
