@@ -34,6 +34,7 @@ const hashComplete = the_hash => {
 let urlencodedParser = express.urlencoded({
     extended: false
 });
+
 app.use(cookieParser());
 
 let myString = 'Bob';
@@ -56,7 +57,7 @@ app.get('/', (req, res) => {
 
 app.get('/', routes.index);
 app.get('/landing', routes.landing);
-//app.get('/landing', routes.landing);
+app.get('/create', routes.create);
 app.get('/login', routes.login);
 app.get('/logout', routes.logout);
 

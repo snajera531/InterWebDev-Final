@@ -2,13 +2,14 @@ extends layout
 
 block content
     head
-    body
-        form(method='post' action='/landing.pug')
+    body 
+    form(method='post' action='/landing.pug')
             p Username (user):
                 br
                 input(type='text' name='username')
             p Password (pass):
                 br
                 input(type='text' name='password')
-            p
-                input(type='submit' value ='Log in')
+            p Confirm Password ()
+            p 
+                input(type='submit' value='Submit') 

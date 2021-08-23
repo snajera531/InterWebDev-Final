@@ -33,3 +33,15 @@ exports.logout = (req, res) => {
     });
     res.redirect('/login');
 };
+
+exports.index = (req, res) => {
+    res.render('index', {
+        title: 'Home'
+    });
+};
+
+exports.create = (req, res) => {
+    res.render('create', {
+        title: 'New user'
+    });
+};
