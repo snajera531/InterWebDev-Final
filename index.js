@@ -54,7 +54,7 @@ app.get('/', (req, res) => {
     }
 });
 
-// app.get('/', routes.index);
+app.get('/', routes.index);
 app.get('/landing', routes.landing);
 //app.get('/landing', routes.landing);
 app.get('/login', routes.login);
