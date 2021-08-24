@@ -60,6 +60,19 @@ exports.index = (req, res) => {
 };
 
 exports.submitted = (req, res) => {
+    let user = new Login({
+        username: req.body.username,
+        password: req.body.password,
+        email: req.body.email,
+        age: req.body.age,
+        questionOne: req.body.questionOne,
+        questionTwo: req.body.questionTwo,
+        questionThree: req.body.questionThree
+    });
+    user.save(err => {
+        if(err) console.log(err);
+        console.log("saved");
+    });
     let person = {
         name: req.body.username,
 
