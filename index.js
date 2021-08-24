@@ -4,6 +4,7 @@ const routes = require('./routes/routes');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcryptjs');
+const expressSession = require('express-session');
 
 const app = express();
 
@@ -30,6 +31,33 @@ const hashComplete = the_hash => {
         console.log(res);
     });
 };
+
+app.use(expressSession({
+    secret: 'wh4t3v3r',
+    saveUninitialized: true,
+    resave: true
+}));
+
+const checkAuth = (req, res, next) => {
+    if(req.session.user && req.session.user.isAuthenticated) {
+        next();
+    } else {
+        res.redirect('/');
+    };
+};
+
+app.post('/', urlEncodedParser, (req, res) => {
+    console.log(req.body.username);
+    if(req.body.username == 'user' && req.body.password == 'pass') {
+        req.session.user = {
+            isAuthenticated: true,
+            username: req.body.username
+        };
+        res.redirect('/private');
+    } else {
+        res.redirect('/');
+    }
+});
 
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
