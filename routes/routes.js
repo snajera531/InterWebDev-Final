@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
+const internal = require('stream');
 
 
 mongoose.Promise = global.Promise;
@@ -15,6 +16,17 @@ mongoose.set('useFindAndModify', true);
 let mdb = mongoose.connection;
 mdb.on('error', console.error.bind(console, 'connection error'));
 mdb.once('open', callback => {});
+
+let loginSchema = mongoose.Schema({
+    username: String,
+    password: String,
+    email: String,
+    age: Number,
+    questionOne: String,
+    questionTwo: String,
+    questionThree: String
+});
+
 
 exports.login = (req, res) => {
     res.render('login', {
