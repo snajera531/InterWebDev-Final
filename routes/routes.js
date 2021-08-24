@@ -85,7 +85,6 @@ exports.submitted = (req, res) => {
 exports.edit = (req, res) => {
     res.render('edit', {
         title: 'Edit Person',
-        login
     });
 };
 
