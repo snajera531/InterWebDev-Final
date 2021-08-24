@@ -61,7 +61,7 @@ exports.index = (req, res) => {
 
 exports.submitted = (req, res) => {
     let person = {
-        name: req.body.name,
+        name: req.body.username,
 
     };
     
