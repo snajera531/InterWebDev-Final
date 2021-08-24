@@ -39,25 +39,6 @@ const hashComplete = the_hash => {
 //     extended: false
 // });
 
-app.use(cookieParser());
-
-let myString = 'Bob';
-
-let visited = 0;
-
-app.get((req, res) => {
-    visited++;
-    
-    res.cookie('visited', visited, {maxAge: 99999999999999999999999999});    
-    res.cookie('stuff', myString, {maxAge: 99999999999999999999999999});  
-
-    if(req.cookies.beenToSiteBefore == 'yes'){
-        res.send(`You have visited here ${req.cookies.visited} times`)
-    }else{
-        res.cookie('beenToSiteBefore', 'yes', {maxAge: 99999999999999999999999999});  
-        res.send('this is your first time here')
-    }
-});
 
 app.get('/', routes.index);
 app.get('/landing', routes.landing);
