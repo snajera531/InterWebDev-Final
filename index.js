@@ -83,10 +83,10 @@ app.get((req, res) => {
     res.cookie('stuff', myString, {maxAge: 99999999999999999999999999});  
 
     if(req.cookies.beenToSiteBefore == 'yes'){
-        res.send(`You have visited here ${req.cookies.visited} times`)
+        res.send(`You have visited here ${req.cookies.visited} times`);
     }else{
-        res.cookie('beenToSiteBefore', 'yes', {maxAge: 99999999999999999999999999});  
-        res.send('this is your first time here')
+        res.cookie('beenToSiteBefore', 'yes', {maxAge: 99999999999999999999999999});
+        res.send('this is your first time here');
     };
 });
 
