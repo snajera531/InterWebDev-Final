@@ -35,9 +35,9 @@ const hashComplete = the_hash => {
 // app.set('views', __dirname + '/views');
 // app.use(express.static(path.join(__dirname, '/public')));
 
-// let urlencodedParser = express.urlencoded({
-//     extended: false
-// });
+let urlencodedParser = express.urlencoded({
+    extended: false
+});
 
 app.use(cookieParser());
 
@@ -63,5 +63,6 @@ app.get('/', routes.index);
 app.get('/landing', routes.landing);
 app.get('/login', routes.login);
 app.get('/logout', routes.logout);
+app.post('/submitted', urlencodedParser, routes.submitted);
 
 app.listen(3000);
