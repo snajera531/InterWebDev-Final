@@ -33,7 +33,6 @@ exports.login = (req, res) => {
     res.render('login', {
         title: 'Log In'
     });
-    res.redirect('/edit');
 };
 
 exports.landing = (req, res) => {
@@ -86,7 +85,7 @@ exports.submitted = (req, res) => {
 exports.edit = (req, res) => {
     res.render('edit', {
         title: 'Edit Person',
-        user
+        login
     });
 };
 
