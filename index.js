@@ -45,5 +45,4 @@ app.get('/landing', routes.landing);
 app.get('/login', routes.login);
 app.get('/logout', routes.logout);
 
-
 app.listen(3000);
