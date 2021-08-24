@@ -44,10 +44,5 @@ exports.submitted = (req, res) => {
     res.render('submitted', {
         title: 'Account created!'
     });
+    res.redirect('/login');
 };
-
-// exports.create = (req, res) => {
-//     res.render('create', {
-//         title: 'New user'
-//     });
-// };
