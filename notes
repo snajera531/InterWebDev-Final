@@ -16,3 +16,13 @@ login
 Need
 
 Pages
+
+
+in edit route:
+findOne(username:req.body.username =>
+if obj not null, salt and hash req.body.password
+    if saltHashPass = obj.password 
+        render editperson
+    else kick back to login page
+else kick back to login Page
+)
