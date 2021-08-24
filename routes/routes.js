@@ -85,8 +85,7 @@ exports.submitted = (req, res) => {
 exports.edit = (req, res) => {
     res.render('edit', {
         title: 'Edit Person',
-        username: req.body.username,
-        password: req.body.password
+        username: req.body.username
     });
 };
 
