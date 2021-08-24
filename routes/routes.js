@@ -84,9 +84,11 @@ exports.submitted = (req, res) => {
 
 exports.edit = (req, res) => {
     Login.findOne((username) => {
-        if(username != null) {
-            makeHash(password);
-            if(makeHash(password) = req.body.password) {
+
+        if(!username){
+            res.redirect('/login');
+        } else {
+            if(makeHash("password") == makeHash(req.body.password)) {
                 res.render('edit', {
                     title: 'Edit Person',
                     username: req.body.username
@@ -94,15 +96,9 @@ exports.edit = (req, res) => {
             } else {
                 res.redirect('/login');
             };
-        } else {
-            res.redirect('/login');
-        };
-    });
+        }
 
-    res.render('edit', {
-        title: 'Edit Person',
-        username: req.body.username
-    });
+    }); 
 };
 
 exports.editLogin = (req, res) => {
