@@ -83,7 +83,7 @@ exports.submitted = (req, res) => {
 };
 
 exports.edit = (req, res) => {
-    Login.findOne((username: username) => {
+    Login.findOne((username) => {
         if(username != null) {
             makeHash(password);
             if(makeHash(password) = req.body.password) {
