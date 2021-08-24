@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const fs = require('fs');
 
 
 mongoose.Promise = global.Promise;
@@ -37,5 +38,35 @@ exports.logout = (req, res) => {
 exports.index = (req, res) => {
     res.render('index', {
         title: 'Home'
+    });
+};
+exports.index = (req, res) => {
+    res.render('index', {
+        title: 'Home'
+    });
+};
+
+exports.submitted = (req, res) => {
+    let person = {
+        name: req.body.name,
+
+    };
+    
+    let personData = `
+    <p>
+    name: ${person.name}<br />
+   
+    ----------------------------------------
+    </p>
+    `;
+
+    fs.writeFile('public/mytext.html', personData, err => {
+        if(err) throw err;
+        console.log('Data saved!');
+    });
+
+    res.render('submitted', {
+        title: 'Form Accepted',
+        person
     });
 };
