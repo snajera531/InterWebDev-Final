@@ -40,6 +40,12 @@ exports.index = (req, res) => {
     });
 };
 
+exports.submitted = (req, res) => {
+    res.render('submitted', {
+        title: 'Account created!'
+    });
+};
+
 // exports.create = (req, res) => {
 //     res.render('create', {
 //         title: 'New user'
