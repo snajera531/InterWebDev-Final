@@ -49,13 +49,15 @@ exports.logout = (req, res) => {
 };
 
 exports.index = (req, res) => {
+    res.cookie('beenToSiteBefore', new Date(), 99999);
+    
+    let timeLastVisited = new Date(req.cookies.beenToSiteBefore).toLocaleTimeString();
+    let dateLastVisited = new Date(req.cookies.beenToSiteBefore).toLocaleDateString();
+
     res.render('index', {
-        title: 'Home'
-    });
-};
-exports.index = (req, res) => {
-    res.render('index', {
-        title: 'Home'
+        title: 'Home',
+        lastTimeVisited: timeLastVisited,
+        lastDateVisited: dateLastVisited
     });
 };
 

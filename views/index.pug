@@ -1,8 +1,9 @@
 extends layout 
 
 block content 
-    p(name='visitedText')
-    p sup bois, we fixin' this rn lol
+    div=lastTimeVisited
+    div=lastDateVisited
+    br
 
     a(href='/login') Login 
     br

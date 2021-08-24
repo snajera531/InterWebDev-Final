@@ -67,26 +67,9 @@ app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, '/public')));
 
-
-
-
 app.use(cookieParser());
 
-let myString = 'Visited: ';
-
-let visited = 0;
-
-app.get((req, res) => {
-    visited++;
-    
-    res.cookie('visited', visited, {maxAge: 99999999999999999999999999});    
-    res.cookie('stuff', myString, {maxAge: 99999999999999999999999999});  
-
-    if(req.cookies.beenToSiteBefore == 'yes'){
-    }else{
-        res.cookie('beenToSiteBefore', 'yes', {maxAge: 99999999999999999999999999});
-    };
-});
+app.get((req, res) => {});
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
