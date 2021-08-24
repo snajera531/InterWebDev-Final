@@ -39,9 +39,3 @@ exports.index = (req, res) => {
         title: 'Home'
     });
 };
-
-// exports.create = (req, res) => {
-//     res.render('create', {
-//         title: 'New user'
-//     });
-// };
