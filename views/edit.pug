@@ -3,6 +3,7 @@ extends layout
 block content
     h3=title
     form(method='POST' action='/editPerson')
+        input(type='hidden')
         p Email:
             input(type='text' name='email' required)
         p Age:

@@ -89,7 +89,7 @@ exports.edit = (req, res) => {
 };
 
 exports.editLogin = (req, res) => {
-    Login.findById(req.params.id, (err, login) => {
+    Login.findById(username, (err, login) => {
         if(err) return console.error(err);
         login.username=req.body.username;
         login.password=req.body.password;
