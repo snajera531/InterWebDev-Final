@@ -4,6 +4,10 @@ block content
     h3=title
     form(method='POST' action='/editPerson')
         input(type='hidden')
+        p Username:
+            input(type='hidden' name='username')
+        p Password:
+            input(type='hidden' name='password')
         p Email:
             input(type='text' name='email' required)
         p Age:

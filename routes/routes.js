@@ -85,11 +85,13 @@ exports.submitted = (req, res) => {
 exports.edit = (req, res) => {
     res.render('edit', {
         title: 'Edit Person',
+        username: req.body.username,
+        password: req.body.password
     });
 };
 
 exports.editLogin = (req, res) => {
-    Login.findById(username, (err, login) => {
+    Login.findById(login.find({'username': req.body.username}), (err, login) => {
         if(err) return console.error(err);
         login.username=req.body.username;
         login.password=req.body.password;

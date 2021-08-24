@@ -80,7 +80,8 @@ app.use((req, res, next) => {
 app.get('/', routes.index);
 app.get('/landing', routes.landing);
 app.get('/login', routes.login);
-app.post('/editPerson', urlencodedParser, routes.edit);
+app.get('/edit', routes.edit);
+app.post('/editPerson', urlencodedParser, routes.editLogin);
 app.get('/logout', routes.logout);
 app.post('/submitted', urlencodedParser, routes.submitted);
 
