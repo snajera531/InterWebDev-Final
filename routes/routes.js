@@ -23,7 +23,7 @@ exports.login = (req, res) => {
 
 exports.landing = (req, res) => {
     res.render('landing', {
-        title: 'Welcome!'
+        title: 'New User'
     });
 };
 
@@ -33,3 +33,15 @@ exports.logout = (req, res) => {
     });
     res.redirect('/login');
 };
+
+exports.index = (req, res) => {
+    res.render('index', {
+        title: 'Home'
+    });
+};
+
+// exports.create = (req, res) => {
+//     res.render('create', {
+//         title: 'New user'
+//     });
+// };
