@@ -33,6 +33,7 @@ exports.login = (req, res) => {
     res.render('login', {
         title: 'Log In'
     });
+    res.redirect('edit');
 };
 
 exports.landing = (req, res) => {
@@ -77,5 +78,30 @@ exports.submitted = (req, res) => {
     res.render('submitted', {
         title: 'Form Accepted',
         user
+    });
+};
+
+exports.edit = (req, res) => {
+    res.render('edit', {
+        title: 'Edit Person',
+        user
+    });
+};
+
+exports.editLogin = (req, res) => {
+    Login.findById(req.params.id, (err, login) => {
+        if(err) return console.error(err);
+        login.username=req.body.username;
+        login.password=req.body.password;
+        login.email=req.body.email;
+        login.age=req.body.age;
+        login.questionOne=req.body.questionOne;
+        login.questionTwo=req.body.questionTwo;
+        login.questionThree=req.body.questionThree;
+        login.save((err, login) => {
+            if(err) return console.error(err);
+            console.log(req.body.name + ' updated');
+        });
+        res.redirect('/edit')
     });
 };
