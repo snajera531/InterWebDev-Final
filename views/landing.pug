@@ -13,21 +13,45 @@ block content
             input(type='text' name='age')
         p Question 1: Which degree is the best?
             p(name='questionOneText')
-            input(type='radio' name='questionOneA1' value='Web')
-            input(type='radio' name='questionOneA2' value='Game')
-            input(type='radio' name='questionOneA3' value='Why does this matter?')
-            input(type='radio' name='questionOneA4' value='Who cares, let people be people')
+            input(type='radio' id='Web' name='questionOne' value='Web')
+            label(for="Web") Web
+            br
+            input(type='radio' id='Game' name='questionOne' value='Game')
+            label(for="Game") Game
+            br
+            input(type='radio' id='whyMatter' name='questionOne' value='Why does this matter?')
+            label(for="whyMatter") Why does this matter?
+            br
+            input(type='radio' id='whoCares' name='questionOne' value='Who cares, let people be people')
+            label(for="whoCares") Who cares, let people be people
+            br
         p Question 2: Who is the president of Neumont?
             p(name='questionTwoText')
-            input(type='radio' name='quesitonTwoA1' value='Harrison')
-            input(type='radio' name='quesitonTwoA2' value='Deardall')
-            input(type='radio' name='quesitonTwoA3' value='Reed')
-            input(type='radio' name='quesitonTwoA4' value='Marshall')
+            input(type='radio' id="harrison" name='quesitonTwo' value='Harrison')
+            label(for="harrison") Harrison
+            br
+            input(type='radio' id="beardall" name='quesitonTwo' value='Beardall')
+            label(for="beardall") Beardall
+            br
+            input(type='radio' id="reed" name='quesitonTwo' value='Reed')
+            label(for="reed") Reed
+            br
+            input(type='radio' id="marshall" name='quesitonTwo' value='Marshall')
+            label(for="marshall") Marshall
+            br
         p Question 3: Who is the best teacher?
             p(name='questionThreeText')
-            input(type='radio' name='quesitonThreeA1' value='Professor Beatty')
-            input(type='radio' name='quesitonThreeA2' value='Professor Maple')
-            input(type='radio' name='quesitonThreeA3' value='Professor Cantera')
-            input(type='radio' name='quesitonThreeA4' value='Dr Kohler')
+            input(type='radio' id="beatty" name='quesitonThree' value='Professor Beatty')
+            label(for="beatty") Professor Beatty
+            br
+            input(type='radio' id="maple" name='quesitonThree' value='Professor Maple')
+            label(for="maple") Professor Maple
+            br
+            input(type='radio' id="cantera" name='quesitonThree' value='Professor Cantera')
+            label(for="cantera") Professor Cantera
+            br
+            input(type='radio' id="kohler" name='quesitonThree' value='Dr Kohler')
+            label(for="kohler") Dr Kohler
+            br
         p
             input(type='submit' value='Submit')
