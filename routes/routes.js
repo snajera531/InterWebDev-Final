@@ -91,10 +91,9 @@ exports.edit = (req, res) => {
 };
 
 exports.editLogin = (req, res) => {
-    Login.findById(login.find({'username': req.body.username}), (err, login) => {
+    Login.find({'username': req.body.username}, (err, login) => {
         if(err) return console.error(err);
         login.username=req.body.username;
-        login.password=req.body.password;
         login.email=req.body.email;
         login.age=req.body.age;
         login.questionOne=req.body.questionOne;
