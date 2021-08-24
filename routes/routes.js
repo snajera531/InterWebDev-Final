@@ -73,26 +73,9 @@ exports.submitted = (req, res) => {
         if(err) console.log(err);
         console.log("saved");
     });
-    let person = {
-        name: req.body.username,
-
-    };
-    
-    let personData = `
-    <p>
-    name: ${person.name}<br />
-   
-    ----------------------------------------
-    </p>
-    `;
-
-    fs.writeFile('public/mytext.html', personData, err => {
-        if(err) throw err;
-        console.log('Data saved!');
-    });
 
     res.render('submitted', {
         title: 'Form Accepted',
-        person
+        user
     });
 };

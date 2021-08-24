@@ -4,16 +4,16 @@ block content
     h3=title
     form(method='POST' action='/submitted')
         p Username:
-            input(type='text' name='username')
+            input(type='text' name='username' required)
         p Password:
-            input(type='text' name='password')
+            input(type='text' name='password' required)
         p Email:
-            input(type='text' name='email')
+            input(type='text' name='email' required)
         p Age:
-            input(type='number' name='age')
+            input(type='number' name='age' required)
         p Question 1: Which degree is the best?
             p(name='questionOneText')
-            input(type='radio' id='Web' name='questionOne' value='Web')
+            input(type='radio' id='Web' name='questionOne' value='Web' required)
             label(for="Web") Web
             br
             input(type='radio' id='Game' name='questionOne' value='Game')
@@ -27,7 +27,7 @@ block content
             br
         p Question 2: Who is the president of Neumont?
             p(name='questionTwoText')
-            input(type='radio' id="harrison" name='questionTwo' value='Harrison')
+            input(type='radio' id="harrison" name='questionTwo' value='Harrison' required)
             label(for="harrison") Harrison
             br
             input(type='radio' id="beardall" name='questionTwo' value='Beardall')
@@ -41,7 +41,7 @@ block content
             br
         p Question 3: Who is the best teacher?
             p(name='questionThreeText')
-            input(type='radio' id="beatty" name='questionThree' value='Professor Beatty')
+            input(type='radio' id="beatty" name='questionThree' value='Professor Beatty' required)
             label(for="beatty") Professor Beatty
             br
             input(type='radio' id="maple" name='questionThree' value='Professor Maple')

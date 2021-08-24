@@ -46,7 +46,11 @@ const checkAuth = (req, res, next) => {
     };
 };
 
-app.post('/', urlEncodedParser, (req, res) => {
+let urlencodedParser = express.urlencoded({
+    extended: false
+});
+
+app.post('/', urlencodedParser, (req, res) => {
     console.log(req.body.username);
     if(req.body.username == 'user' && req.body.password == 'pass') {
         req.session.user = {
@@ -63,9 +67,8 @@ app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 app.use(express.static(path.join(__dirname, '/public')));
 
-let urlencodedParser = express.urlencoded({
-    extended: false
-});
+
+
 
 app.use(cookieParser());
 
