@@ -27,6 +27,7 @@ let loginSchema = mongoose.Schema({
     questionThree: String
 });
 
+let Login = mongoose.model('Login_Collection', loginSchema);
 
 exports.login = (req, res) => {
     res.render('login', {
