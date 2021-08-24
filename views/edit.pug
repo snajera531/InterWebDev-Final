@@ -1,0 +1,53 @@
+extends layout
+
+block content
+    h3=title
+    form(method='POST' action='/editPerson')
+        p Email:
+            input(type='text' name='email' required)
+        p Age:
+            input(type='number' name='age' required)
+        p Question 1: Which degree is the best?
+            p(name='questionOneText')
+            input(type='radio' id='Web' name='questionOne' value='Web' required)
+            label(for="Web") Web
+            br
+            input(type='radio' id='Game' name='questionOne' value='Game')
+            label(for="Game") Game
+            br
+            input(type='radio' id='whyMatter' name='questionOne' value='Why does this matter?')
+            label(for="whyMatter") Why does this matter?
+            br
+            input(type='radio' id='whoCares' name='questionOne' value='Who cares, let people be people')
+            label(for="whoCares") Who cares, let people be people
+            br
+        p Question 2: Who is the president of Neumont?
+            p(name='questionTwoText')
+            input(type='radio' id="harrison" name='questionTwo' value='Harrison' required)
+            label(for="harrison") Harrison
+            br
+            input(type='radio' id="beardall" name='questionTwo' value='Beardall')
+            label(for="beardall") Beardall
+            br
+            input(type='radio' id="reed" name='questionTwo' value='Reed')
+            label(for="reed") Reed
+            br
+            input(type='radio' id="marshall" name='questionTwo' value='Marshall')
+            label(for="marshall") Marshall
+            br
+        p Question 3: Who is the best teacher?
+            p(name='questionThreeText')
+            input(type='radio' id="beatty" name='questionThree' value='Professor Beatty' required)
+            label(for="beatty") Professor Beatty
+            br
+            input(type='radio' id="maple" name='questionThree' value='Professor Maple')
+            label(for="maple") Professor Maple
+            br
+            input(type='radio' id="cantera" name='questionThree' value='Professor Cantera')
+            label(for="cantera") Professor Cantera
+            br
+            input(type='radio' id="kohler" name='quesitonThree' value='Dr Kohler')
+            label(for="kohler") Dr Kohler
+            br
+        p
+            input(type='submit' value='Update User')
