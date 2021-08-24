@@ -84,7 +84,6 @@ exports.submitted = (req, res) => {
 
 exports.edit = (req, res) => {
     Login.findOne((username) => {
-
         if(!username){
             res.redirect('/login');
         } else {
