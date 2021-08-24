@@ -83,6 +83,8 @@ exports.submitted = (req, res) => {
 };
 
 exports.edit = (req, res) => {
+    Login.find({'username': req.body.username});
+    
     res.render('edit', {
         title: 'Edit Person',
         username: req.body.username
