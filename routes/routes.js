@@ -83,6 +83,8 @@ exports.submitted = (req, res) => {
 };
 
 exports.edit = (req, res) => {
+    Login.find({'username': req.body.username});
+    
     res.render('edit', {
         title: 'Edit Person',
         username: req.body.username
@@ -90,7 +92,7 @@ exports.edit = (req, res) => {
 };
 
 exports.editLogin = (req, res) => {
-    Login.find({'username': req.body.username}, (err, login) => {
+    Login.findOne({'username': req.body.username}, (err, login) => {
         if(err) return console.error(err);
         login.username=req.body.username;
         login.email=req.body.email;
