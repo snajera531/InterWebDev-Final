@@ -107,6 +107,10 @@ exports.edit = (req, res) => {
     }); 
 };
 
+exports.editPage = (req, res) => {
+    res.redirect('/');
+}
+
 exports.editLogin = (req, res) => {
     Login.findOne({'username': req.body.username}, (err, login) => {
         if(err) return console.error(err);
