@@ -1,7 +1,12 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
 const internal = require('stream');
+const bcrypt = require('bcryptjs');
 
+const makeHash = (the_str, salt) => {
+    let hash = bcrypt.hashSync(the_str, salt, (err, my_hash) => {return my_hash;});
+    return hash;
+};
 
 mongoose.Promise = global.Promise;
 
@@ -20,6 +25,7 @@ mdb.once('open', callback => {});
 let loginSchema = mongoose.Schema({
     username: String,
     password: String,
+    salt: String,
     email: String,
     age: Number,
     questionOne: String,
@@ -62,9 +68,11 @@ exports.index = (req, res) => {
 };
 
 exports.submitted = (req, res) => {
+    let salt = bcrypt.genSaltSync(10, (err, salts) => {return salts;});
     let user = new Login({
         username: req.body.username,
-        password: req.body.password,
+        password: makeHash(req.body.password, salt),
+        salt: salt,
         email: req.body.email,
         age: req.body.age,
         questionOne: req.body.questionOne,
@@ -83,20 +91,19 @@ exports.submitted = (req, res) => {
 };
 
 exports.edit = (req, res) => {
-    Login.findOne((username) => {
-        if(!username){
+    Login.findOne({'username': req.body.username}, (err, login) => {
+        if(!login){
             res.redirect('/login');
         } else {
-            if(makeHash("password") == makeHash(req.body.password)) {
+            if(login.password == makeHash(req.body.password, login.salt)) {
                 res.render('edit', {
                     title: 'Edit Person',
                     username: req.body.username
                 });
             } else {
                 res.redirect('/login');
-            };
+            }
         }
-
     }); 
 };
 
@@ -111,8 +118,11 @@ exports.editLogin = (req, res) => {
         login.questionThree=req.body.questionThree;
         login.save((err, login) => {
             if(err) return console.error(err);
-            console.log(req.body.name + ' updated');
+            console.log(req.body.username + ' updated');
         });
-        res.redirect('/edit')
+        res.render('edit', {
+            title: 'Edit Person',
+            username: req.body.username
+        });
     });
 };
