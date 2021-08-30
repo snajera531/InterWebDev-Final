@@ -40,3 +40,14 @@ const drawQ2 = () => {
 const drawQ3 = () => {
 
 }
+
+const loop = () => {
+    ctx.clearReact(0, 0, 800, 400);
+    drawEmptyGraph();
+
+    //grab data
+
+    //draw graph
+
+    //yay
+}
