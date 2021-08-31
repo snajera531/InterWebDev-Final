@@ -130,3 +130,15 @@ exports.editLogin = (req, res) => {
         });
     });
 };
+
+exports.api = (req, res) => {
+    // console.log(req.query.id);
+
+    if(req.query.id == undefined){
+        res.json(theJSON)
+    }else {
+        res.json(theJSON[req.query.id]);
+    }
+        
+    res.send(theJSON);
+};
