@@ -132,15 +132,12 @@ exports.editLogin = (req, res) => {
 };
 
 exports.api = (req, res) => {
-    // console.log(req.query.id);
+    console.log(req.query.username);
 
-    if(req.query.id == undefined){
-        res.json(theJSON)
-    }else {
-        res.json(theJSON[req.query.id]);
-    }
-        
-    res.send(theJSON);
+    Login.find({Username: `${req.query.username}`}, (err, person) =>{
+        if(err) return console.error(err);
+        res.send(person);
+    }).limit(parseInt(req.query.amount));
 };
 
 exports.graph = (req, res) => {
