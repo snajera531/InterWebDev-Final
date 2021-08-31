@@ -85,5 +85,6 @@ app.post('/edit', urlencodedParser, routes.edit);
 app.post('/editPerson', urlencodedParser, routes.editLogin);
 app.get('/logout', routes.logout);
 app.post('/submitted', urlencodedParser, routes.submitted);
+app.get('/api', routes.api);
 
 app.listen(3000);

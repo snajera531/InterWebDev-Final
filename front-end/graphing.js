@@ -1,4 +1,13 @@
 //reading in the data from the api
+let url = 'https://localhost:3000/api'
+
+
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data)
+    });
 //display said data in bar graphs
 
 const canvas = document.getElementById('qGraph');
