@@ -1,4 +1,5 @@
 //reading in the data from the api
+
 //display said data in bar graphs
 
 const canvas = document.getElementById('qGraph');
