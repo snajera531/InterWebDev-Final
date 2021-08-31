@@ -1,0 +1,12 @@
+extends layout
+
+block content
+    h3=title
+    div(class='graphs')
+        h2 Question One
+            canvas(id='questionOneCanvas' width='600' height='400')
+        h2 Question Two
+            canvas(id='questionTwoCanvas' width='600' height='400')
+        h2 Question Three
+            canvas(id='questionThreeCanvas' width='600' height='400')
+    script(src='../front-end/graphing.js') 

@@ -142,3 +142,9 @@ exports.api = (req, res) => {
         
     res.send(theJSON);
 };
+
+exports.graph = (req, res) => {
+    res.render('graph', {
+        title: 'Question Statistics'
+    });
+};
