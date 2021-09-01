@@ -134,9 +134,9 @@ exports.editLogin = (req, res) => {
 exports.api = (req, res) => {
     console.log(req.query.username);
 
-    Login.find({Username: `${req.query.username}`}, (err, person) =>{
+    Login.find({Username: `${req.query.username}`}, (err, user) =>{
         if(err) return console.error(err);
-        res.send(person);
+        res.send(user);
     }).limit(parseInt(req.query.amount));
 };
 
