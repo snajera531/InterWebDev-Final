@@ -13,6 +13,14 @@ body{
     border-radius: 8px;
 }
 
+h2{
+    text-align: center;
+}
+
+hr{
+    border: 2px dotted #f3d5e6;
+}
+
 footer{
     background-color: #191970;
     color: #b091a2;

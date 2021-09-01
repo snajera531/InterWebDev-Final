@@ -1,12 +1,14 @@
-extends layout
+extends layout 
 
 block content
     h3=title
     div(class='graphs')
-        h2 Question One
-            canvas(id='questionOneCanvas' width='600' height='400')
-        h2 Question Two
-            canvas(id='questionTwoCanvas' width='600' height='400')
-        h2 Question Three
-            canvas(id='questionThreeCanvas' width='600' height='400')
-    script(src='../front-end/graphing.js') 
+        h2 Question One - Which degree is the best?
+        canvas(id='questionOneCanvas' width='600' height='300')
+        hr 
+        h2 Question Two - Who is the president of Neumont?
+        canvas(id='questionTwoCanvas' width='600' height='300')
+        hr
+        h2 Question Three - Who is the best teacher?
+        canvas(id='questionThreeCanvas' width='600' height='300')
+    script(src='/js/graphing.js')
