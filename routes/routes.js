@@ -132,20 +132,12 @@ exports.editLogin = (req, res) => {
 };
 
 exports.api = (req, res) => {
-<<<<<<< Updated upstream
     console.log(req.query.username);
 
     Login.find({Username: `${req.query.username}`}, (err, user) =>{
         if(err) return console.error(err);
         res.send(user);
     }).limit(parseInt(req.query.amount));
-=======
-    Login.find((err, person) => {
-        console.log('hi');
-        console.log(person);
-        res.json(person);
-    });
->>>>>>> Stashed changes
 };
 
 exports.graph = (req, res) => {
