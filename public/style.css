@@ -17,6 +17,14 @@ h2{
     text-align: center;
 }
 
+a{
+    color: #b091a2;
+}
+
+a:visited{
+    color: #f3d5e6;
+}
+
 hr{
     border: 2px dotted #f3d5e6;
 }
